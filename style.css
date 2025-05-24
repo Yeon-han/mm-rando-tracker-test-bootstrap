@@ -1,0 +1,21 @@
+/* .hide-icon {
+  display:none;
+} */
+
+
+.unchecked {
+  filter: grayscale(100%);
+  opacity: 0.9;
+}
+
+.icons img:hover {
+  cursor: pointer;
+}
+
+div .icons {
+ user-select: none; 
+}
+
+body {
+  background-color: pink;
+}

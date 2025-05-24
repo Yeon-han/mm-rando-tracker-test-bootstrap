@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tracker Demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="text-center mb-4">Tracker Test - MM Rando</h1>
+    <div id="player" style="display: none">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/AVbCuNjjYcQ?si=aOegXn4gsR4fBnsl&amp;start=30"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <section class="container-fluid">
+      <div class="row align-items-center">
+        <div
+          class="col-2 ms-2 list-group left-menu"
+          style="min-height: 120px; width: 320px"
+        >
+          <button
+            type="button"
+            class="show-masks list-group-item list-group-item-action"
+          >
+            Masks
+          </button>
+          <button
+            type="button"
+            class="show-inventory list-group-item list-group-item-action"
+          >
+            Inventory
+          </button>
+
+          <button
+            type="button"
+            class="show-quest-items list-group-item list-group-item-action"
+          >
+            Quest Items
+          </button>
+          <button
+            type="button"
+            class="show-equipment list-group-item list-group-item-action"
+          >
+            Equipment
+          </button>
+          <button
+            type="button"
+            class="show-all list-group-item list-group-item-action"
+          >
+            Show all
+          </button>
+          <!-- <button
+            type="button"
+            class="jerma show-all list-group-item list-group-item-action"
+          >
+            Random Jerma Clip
+          </button> -->
+          <button
+            type="button"
+            class="clear-all list-group-item list-group-item-action"
+            data-bs-toggle="collapse"
+            data-bs-target="#target"
+          >
+            Clear all
+          </button>
+        </div>
+        <div class="col text-center icons dropdown-center">
+          <!-- Transformation masks -->
+          <p
+            class="trans-mask-divider display-6 my-2 dividers"
+            style="display: none"
+          >
+            Transformation Masks
+          </p>
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/transformation masks/Deku_Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/transformation masks/Goron_Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/transformation masks/Zora_Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/transformation masks/FD_Icon_1.png"
+          />
+          <!-- Regular masks -->
+          <p
+            class="reg-mask-divider display-6 my-2 dividers"
+            style="display: none"
+          >
+            Regular Masks
+          </p>
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="assets/regular masks/All-Night-Mask-Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="assets/regular masks/Blast-Mask-Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="assets/regular masks/Bremen-Mask-Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="assets/regular masks/Captains_Hat_Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="assets/regular masks/Couples-Mask-Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="assets/regular masks/Don-Geros-Mask-Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="assets/regular masks/Garos-Mask-Icon_1.png"
+          />
+          <img
+            class="unchecked masks img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/regular masks/Bunny-Hood-Mask-Icon.png"
+          />
+          <!-- Equipment -->
+          <img
+            class="unchecked equipment img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/equipment/Heros-Shield-Icon_1.png"
+          />
+          <img
+            class="unchecked equipment img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/equipment/Quiver-3D_1.png"
+          />
+
+          <img
+            class="unchecked equipment img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/Gilded-Sword-Icon_1.png"
+          />
+          <img
+            class="unchecked equipment img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/equipment/Adults-Wallet_1.png"
+          />
+          <!-- Quest items -->
+          <p
+            class="remains-divider display-6 my-2 dividers"
+            style="display: none"
+          >
+            Boss Remains
+          </p>
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Gohts-Remains-Icon_1.png"
+          />
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Gyorgs-Remains-Icon_1.png"
+          />
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Twinmolds-Remains-Icon_1.png"
+          />
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Odolwas-Remains-Icon_1.png"
+          />
+          <p
+            class="trade-items-divider display-6 my-2 dividers"
+            style="display: none"
+          >
+            Trade Items
+          </p>
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Letter-to-Kafei-Icon_1.png"
+          />
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Pendant-of-Memories-Icon_1.png"
+          />
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Room-Key-Icon_1.png"
+          />
+          <img
+            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/quest items/Moons-Tear-Icon_1.png"
+          />
+          <!-- Inventory items -->
+          <img
+            class="unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Bomb-3D_1.png"
+          />
+          <img
+            class="unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Bombchu-3D_1.png"
+          />
+          <img
+            id="bottle"
+            type="button"
+            class="dropdown-toggle unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Bottle-MM_1.png"
+            data-bs-toggle="dropdown"
+          />
+          <ul class="bottle-contents dropdown-menu">
+            <li><span class="bugs dropdown-item">🪲 Bugs</span></li>
+            <li><span class="fish dropdown-item">🐟 Fish</span></li>
+            <li><span class="regular-poe dropdown-item">👻 Poe</span></li>
+          </ul>
+          <img
+            class="unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Bow-3D_1.png"
+          />
+          <img
+            class="unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Hookshot-Icon_1.png"
+          />
+          <img
+            class="unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Magic-Bean-3D_1.png"
+          />
+
+          <img
+            class="unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Ocarina-of-Time-3D_1.png"
+          />
+          <img
+            class="unchecked inventory img-fluid m-1 bg-light border p-1 rounded-3"
+            src="./assets/inventory/Great-Fairys-Sword-Icon_1.png"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid" style="min-height: 120px">
+      <div class="collapse mt-2" id="target">
+        <div class="alert alert-warning" style="width: 300px" role="alert">
+          <h4 class="alert-heading">Warning!</h4>
+          <p>Clear everything? You can't go back.</p>
+          <div class="row g-2">
+            <button class="clear-all-confirm btn btn-outline-danger">
+              Yes, clear everything
+            </button>
+            <button class="clear-all-cancel btn btn-outline-primary">
+              No, keep everything
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
