@@ -103,17 +103,11 @@ allIcons.forEach((icon) => {
   });
 });
 
-//////////////////
-// Testing area //
-//////////////////
-
-// document.querySelector(".jerma").addEventListener("click", function () {
-//   window.open("https://youtu.be/AVbCuNjjYcQ?si=MaabBHcIXTF70Bgz&t=30", "popup");
-// });
-
+// Bottle stuff
 const poe = document.querySelector(".regular-poe");
 const fish = document.querySelector(".fish");
 const bugs = document.querySelector(".bugs");
+const emptyBottle = document.querySelector(".empty-bottle");
 
 const changeBottleContents = function (path) {
   document.getElementById(
@@ -132,3 +126,14 @@ fish.addEventListener("click", () => {
 poe.addEventListener("click", () => {
   changeBottleContents("Poe-Spirit");
 });
+emptyBottle.addEventListener("click", () => {
+  changeBottleContents("Empty-Bottle");
+});
+
+//////////////////
+// Testing area //
+//////////////////
+
+// document.querySelector(".jerma").addEventListener("click", function () {
+//   window.open("https://youtu.be/AVbCuNjjYcQ?si=MaabBHcIXTF70Bgz&t=30", "popup");
+// });
