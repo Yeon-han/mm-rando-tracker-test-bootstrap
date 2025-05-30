@@ -53,7 +53,7 @@ allIcons.forEach((ele) => {
   shadowToggle(ele);
 });
 
-// Shadow on mouseenter/mouseout WTF IS THING??
+// Shadow on mouseenter/mouseout
 function shadowToggle(thing) {
   thing.addEventListener("mouseenter", () => {
     thing.classList.toggle("shadow");
@@ -87,6 +87,7 @@ showAll.addEventListener("click", () => {
 clearAllConfirm.addEventListener("click", function () {
   console.log("everything was cleared");
   collapseAfterClear();
+  clearBottleContents();
   // All icons are turned gray
   allIcons.forEach((ele) => {
     ele.classList.add("unchecked");
@@ -97,43 +98,56 @@ clearAllConfirm.addEventListener("click", function () {
 clearAllCancel.addEventListener("click", collapseAfterClear);
 
 // CHECK/UNCHECK ITEM ICON!!
-allIcons.forEach((icon) => {
-  icon.addEventListener("click", function () {
-    icon.classList.toggle("unchecked");
-  });
-});
+// allIcons.forEach((icon) => {
+//   icon.addEventListener("click", function () {
+//     icon.classList.toggle("unchecked");
+//   });
+// });
 
 // Bottle stuff
+const bottleID = document.getElementById("bottle");
+const setBottleContentPath = function (path) {
+  bottleID.src = `./assets/inventory/bottle contents/${path}.png`;
+};
+
+function selectBottleContent(domElement, pngName) {
+  domElement.addEventListener("click", () => {
+    setBottleContentPath(`${pngName}`);
+  });
+}
+
 const poe = document.querySelector(".regular-poe");
 const fish = document.querySelector(".fish");
 const bugs = document.querySelector(".bugs");
 const emptyBottle = document.querySelector(".empty-bottle");
+const uncheckBottle = document.querySelector(".remove-bottle-check");
 
-const changeBottleContents = function (path) {
-  document.getElementById(
-    "bottle"
-  ).src = `./assets/inventory/bottle contents/${path}.png`;
-};
-
-bugs.addEventListener("click", () => {
-  changeBottleContents("Bugs");
-});
-
-fish.addEventListener("click", () => {
-  changeBottleContents("Fish-Bottle");
-});
-
-poe.addEventListener("click", () => {
-  changeBottleContents("Poe-Spirit");
-});
-emptyBottle.addEventListener("click", () => {
-  changeBottleContents("Empty-Bottle");
-});
+selectBottleContent(bugs, "Bugs");
+selectBottleContent(fish, "Fish-Bottle");
+selectBottleContent(poe, "Poe-Spirit");
+selectBottleContent(emptyBottle, "Empty-Bottle");
 
 //////////////////
 // Testing area //
 //////////////////
 
-// document.querySelector(".jerma").addEventListener("click", function () {
-//   window.open("https://youtu.be/AVbCuNjjYcQ?si=MaabBHcIXTF70Bgz&t=30", "popup");
-// });
+function bottleToggle(prop) {
+  prop.addEventListener("click", () => bottleID.classList.remove("unchecked"));
+}
+
+allIcons.forEach((icon) => {
+  icon.addEventListener("click", function () {
+    if (icon.id === "bottle") {
+      bottleToggle(poe);
+      bottleToggle(bugs);
+      bottleToggle(fish);
+      bottleToggle(emptyBottle);
+    } else icon.classList.toggle("unchecked");
+  });
+});
+
+function clearBottleContents() {
+  bottleID.classList.add("unchecked");
+  setBottleContentPath("Empty-Bottle");
+}
+uncheckBottle.addEventListener("click", clearBottleContents);
