@@ -132,10 +132,6 @@ selectBottleContent(fish, "Fish-Bottle");
 selectBottleContent(poe, "Poe-Spirit");
 selectBottleContent(emptyBottle, "Empty-Bottle");
 
-//////////////////
-// Testing area //
-//////////////////
-
 function bottleToggle(prop) {
   prop.addEventListener("click", () => bottleID.classList.remove("unchecked"));
 }
@@ -145,3 +141,7 @@ function clearBottleContents() {
   setBottleContentPath("Empty-Bottle");
 }
 uncheckBottle.addEventListener("click", clearBottleContents);
+
+//////////////////
+// Testing area //
+//////////////////
