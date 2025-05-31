@@ -98,11 +98,16 @@ clearAllConfirm.addEventListener("click", function () {
 clearAllCancel.addEventListener("click", collapseAfterClear);
 
 // CHECK/UNCHECK ITEM ICON!!
-// allIcons.forEach((icon) => {
-//   icon.addEventListener("click", function () {
-//     icon.classList.toggle("unchecked");
-//   });
-// });
+allIcons.forEach((icon) => {
+  icon.addEventListener("click", function () {
+    if (icon.id === "bottle") {
+      bottleToggle(poe);
+      bottleToggle(bugs);
+      bottleToggle(fish);
+      bottleToggle(emptyBottle);
+    } else icon.classList.toggle("unchecked");
+  });
+});
 
 // Bottle stuff
 const bottleID = document.getElementById("bottle");
@@ -134,17 +139,6 @@ selectBottleContent(emptyBottle, "Empty-Bottle");
 function bottleToggle(prop) {
   prop.addEventListener("click", () => bottleID.classList.remove("unchecked"));
 }
-
-allIcons.forEach((icon) => {
-  icon.addEventListener("click", function () {
-    if (icon.id === "bottle") {
-      bottleToggle(poe);
-      bottleToggle(bugs);
-      bottleToggle(fish);
-      bottleToggle(emptyBottle);
-    } else icon.classList.toggle("unchecked");
-  });
-});
 
 function clearBottleContents() {
   bottleID.classList.add("unchecked");
