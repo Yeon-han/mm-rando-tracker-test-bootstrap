@@ -1,3 +1,23 @@
+import { iconsTest } from "./iconList.js";
+
+export const imgBootstrapClasses = [
+  "unchecked",
+  "img-fluid",
+  "m-1",
+  "bg-light",
+  "border",
+  "p-1",
+  "rounded-3",
+];
+
+for (const ele of iconsTest) {
+  let newIcon = document.createElement("img");
+  newIcon.classList.add(ele.insertClass, ...imgBootstrapClasses);
+  newIcon.src = ele.path;
+
+  document.querySelector(".icons").insertAdjacentElement("beforeend", newIcon);
+}
+
 // Left side buttons
 const showAll = document.querySelector(".show-all");
 const showMasksButton = document.querySelector(".show-masks");
