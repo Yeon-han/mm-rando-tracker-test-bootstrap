@@ -1,6 +1,6 @@
 import { iconsTest } from "./iconList.js";
 
-export const imgBootstrapClasses = [
+const imgBootstrapClasses = [
   "unchecked",
   "img-fluid",
   "m-1",
