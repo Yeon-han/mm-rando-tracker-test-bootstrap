@@ -1,4 +1,8 @@
-import { iconsTest } from "./iconList.js";
+import {
+  questItemArray,
+  regularMasksArray,
+  inventoryArray,
+} from "./iconList.js";
 
 const imgBootstrapClasses = [
   "unchecked",
@@ -10,13 +14,19 @@ const imgBootstrapClasses = [
   "rounded-3",
 ];
 
-for (const ele of iconsTest) {
-  let newIcon = document.createElement("img");
-  newIcon.classList.add(ele.insertClass, ...imgBootstrapClasses);
-  newIcon.src = ele.path;
-
-  document.querySelector(".icons").insertAdjacentElement("beforeend", newIcon);
-}
+const generateIcon = function (array, htmlClassSelection = ".icons") {
+  for (const element of array) {
+    let newIconTest = document.createElement("img");
+    newIconTest.classList.add(element.htmlClass, ...imgBootstrapClasses);
+    newIconTest.src = element.path;
+    document
+      .querySelector(htmlClassSelection)
+      .insertAdjacentElement("beforeend", newIconTest);
+  }
+};
+// generateIcon(regularMasksArray);
+generateIcon(inventoryArray);
+generateIcon(questItemArray);
 
 // Left side buttons
 const showAll = document.querySelector(".show-all");
