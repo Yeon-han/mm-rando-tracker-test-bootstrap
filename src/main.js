@@ -14,24 +14,28 @@ const imgBootstrapClasses = [
   "p-1",
   "rounded-3",
 ];
+
+function appendItem(element, subCategory, icon) {
+  if (element.itemCategory === "regular-masks") {
+    icon.setAttribute("id", element.id);
+    document.querySelector(".regular-masks-span").append(icon);
+  } else if (element.itemCategory === subCategory) {
+    document.querySelector(`.${subCategory}-span`).append(icon);
+  }
+}
+
 function initialize(list) {
   for (const ele of list) {
     let newIcon = document.createElement("img");
-    if (ele.itemCategory === "inventory") {
-      document.querySelector(".inventory-span").append(newIcon);
-    }
+    appendItem(ele, "inventory", newIcon);
+    appendItem(ele, "equipment", newIcon);
+    appendItem(ele, "regular-masks", newIcon);
+
     if (ele.id === "boss-remains") {
       document.querySelector("#remains-span").append(newIcon);
     }
     if (ele.itemCategory === "quest-item" && !ele.id) {
       document.querySelector(".quest-item-span").append(newIcon);
-    }
-    if (ele.itemCategory === "regular-masks") {
-      newIcon.setAttribute("id", ele.id);
-      document.querySelector(".regular-masks-span").append(newIcon);
-    }
-    if (ele.itemCategory === "equipment") {
-      document.querySelector(".equipment-span").append(newIcon);
     }
     if (ele.itemCategory === "transformation-masks") {
       newIcon.setAttribute("id", ele.id);
@@ -41,6 +45,8 @@ function initialize(list) {
     newIcon.src = ele.path;
   }
 }
+
+// appendItem(ele, "inventory", newIcon);
 
 initialize(equipmentArr);
 initialize(inventoryArr);
