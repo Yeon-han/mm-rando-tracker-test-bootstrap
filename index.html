@@ -14,19 +14,6 @@
   </head>
   <body>
     <h1 class="text-center mb-4">Tracker Test - MM Rando</h1>
-    <!-- <div id="player" style="display: none">
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/AVbCuNjjYcQ?si=aOegXn4gsR4fBnsl&amp;start=30"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-    </div> -->
-
     <section class="container-fluid">
       <div class="row align-items-center">
         <div
@@ -64,12 +51,6 @@
           >
             Show all
           </button>
-          <!-- <button
-            type="button"
-            class="jerma show-all list-group-item list-group-item-action"
-          >
-            Random Jerma Clip
-          </button> -->
           <button
             type="button"
             class="clear-all list-group-item list-group-item-action"
@@ -81,180 +62,65 @@
         </div>
         <div class="col text-center icons dropdown-center">
           <!-- Transformation masks -->
-          <p
-            class="trans-mask-divider display-6 my-2 dividers"
-            style="display: none"
-          >
-            Transformation Masks
-          </p>
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/transformation-masks/Deku-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/transformation-masks/Goron-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/transformation-masks/Zora-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/transformation-masks/FD-Mask.png"
-          />
+          <span class="transformation-masks-span">
+            <p
+              class="trans-mask-divider display-6 my-2 dividers"
+              style="display: none"
+            >
+              Transformation Masks
+            </p>
+          </span>
           <!-- Regular masks -->
-          <p
-            class="reg-mask-divider display-6 my-2 dividers"
-            style="display: none"
-          >
-            Regular Masks
-          </p>
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/All-Night-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/Blast-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/Bremen-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/Captains-Hat.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/Couples-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/Don-Geros-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/Garos-Mask.png"
-          />
-          <img
-            class="masks unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/regular-masks/Bunny-Hood-Mask.png"
-          />
+          <span class="regular-masks-span">
+            <p
+              class="reg-mask-divider display-6 my-2 dividers"
+              style="display: none"
+            >
+              Regular Masks
+            </p>
+          </span>
           <!-- Equipment -->
-          <img
-            class="equipment unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="assets/equipment/Heros-Shield.png"
-          />
-          <img
-            class="equipment unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/equipment/Quiver.png"
-          />
-
-          <img
-            class="equipment unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/equipment/Gilded-Sword.png"
-          />
-          <img
-            class="equipment unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/equipment/Adults-Wallet.png"
-          />
+          <span class="equipment-span"></span>
           <!-- Quest items -->
-          <p
-            class="remains-divider display-6 my-2 dividers"
-            style="display: none"
-          >
-            Boss Remains
-          </p>
-          <img
-            class="quest-item unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Gohts-Remains.png"
-          />
-          <img
-            class="quest-item unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Gyorgs-Remains.png"
-          />
-          <img
-            class="quest-item unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Twinmolds-Remains.png"
-          />
-          <img
-            class="quest-item unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Odolwas-Remains.png"
-          />
-          <p
-            class="trade-items-divider display-6 my-2 dividers"
-            style="display: none"
-          >
-            Trade Items
-          </p>
-          <img
-            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Letter-to-Kafei.png"
-          />
-          <img
-            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Pendant-of-Memories.png"
-          />
-          <img
-            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Room-Key.png"
-          />
-          <img
-            class="unchecked quest-item img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/quest-item/Moons-Tear.png"
-          />
+          <span class="quest-item-span">
+            <p
+              class="remains-divider display-6 my-2 dividers"
+              style="display: none"
+            >
+              Boss Remains
+            </p>
+            <span id="remains-span"></span>
+            <p
+              class="trade-items-divider display-6 my-2 dividers"
+              style="display: none"
+            >
+              Trade Items
+            </p>
+            <span id="trade-items-span"></span>
+          </span>
           <!-- Inventory items -->
-          <img
-            class="inventory unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Bomb.png"
-          />
-          <img
-            class="inventory unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Bombchu.png"
-          />
-          <img
-            id="bottle"
-            type="button"
-            class="inventory dropdown-toggle unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Bottle.png"
-            data-bs-toggle="dropdown"
-          />
-          <ul class="bottle-contents dropdown-menu">
-            <li><span class="bugs dropdown-item">🐛 Bugs</span></li>
-            <li><span class="fish dropdown-item">🐟 Fish</span></li>
-            <li><span class="regular-poe dropdown-item">👻 Poe</span></li>
-            <li>
-              <span class="empty-bottle dropdown-item">Empty bottle</span>
-            </li>
-            <li>
-              <span class="remove-bottle-check dropdown-item"
-                >Uncheck Bottle</span
-              >
-            </li>
-          </ul>
-          <img
-            class="inventory unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Bow.png"
-          />
-          <img
-            class="inventory unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Hookshot.png"
-          />
-          <img
-            class="inventory unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Magic-Bean.png"
-          />
-
-          <img
-            class="inventory unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Ocarina-of-Time.png"
-          />
-          <img
-            class="inventory unchecked img-fluid m-1 bg-light border p-1 rounded-3"
-            src="./assets/inventory/Great-Fairys-Sword.png"
-          />
+          <span class="inventory-span">
+            <img
+              id="bottle"
+              type="button"
+              class="inventory dropdown-toggle unchecked img-fluid m-1 bg-light border p-1 rounded-3"
+              src="./assets/inventory/Bottle.png"
+              data-bs-toggle="dropdown"
+            />
+            <ul class="bottle-contents dropdown-menu">
+              <li><span class="bugs dropdown-item">🐛 Bugs</span></li>
+              <li><span class="fish dropdown-item">🐟 Fish</span></li>
+              <li><span class="regular-poe dropdown-item">👻 Poe</span></li>
+              <li>
+                <span class="empty-bottle dropdown-item">Empty bottle</span>
+              </li>
+              <li>
+                <span class="remove-bottle-check dropdown-item"
+                  >Uncheck Bottle</span
+                >
+              </li>
+            </ul>
+          </span>
         </div>
       </div>
     </section>

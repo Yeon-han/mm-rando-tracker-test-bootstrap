@@ -1,4 +1,9 @@
-import { iconsTest } from "./iconList.js";
+import {
+  inventoryArr,
+  maskArr,
+  equipmentArr,
+  questItemArr,
+} from "./iconList.js";
 
 const imgBootstrapClasses = [
   "unchecked",
@@ -9,14 +14,38 @@ const imgBootstrapClasses = [
   "p-1",
   "rounded-3",
 ];
-
-for (const ele of iconsTest) {
-  let newIcon = document.createElement("img");
-  newIcon.classList.add(ele.insertClass, ...imgBootstrapClasses);
-  newIcon.src = ele.path;
-
-  document.querySelector(".icons").insertAdjacentElement("beforeend", newIcon);
+function initialize(list) {
+  for (const ele of list) {
+    let newIcon = document.createElement("img");
+    if (ele.itemCategory === "inventory") {
+      document.querySelector(".inventory-span").append(newIcon);
+    }
+    if (ele.id === "boss-remains") {
+      document.querySelector("#remains-span").append(newIcon);
+    }
+    if (ele.itemCategory === "quest-item" && !ele.id) {
+      document.querySelector(".quest-item-span").append(newIcon);
+    }
+    if (ele.itemCategory === "regular-masks") {
+      newIcon.setAttribute("id", ele.id);
+      document.querySelector(".regular-masks-span").append(newIcon);
+    }
+    if (ele.itemCategory === "equipment") {
+      document.querySelector(".equipment-span").append(newIcon);
+    }
+    if (ele.itemCategory === "transformation-masks") {
+      newIcon.setAttribute("id", ele.id);
+      document.querySelector(".transformation-masks-span").append(newIcon);
+    }
+    newIcon.classList.add(ele.insertClass, ...imgBootstrapClasses);
+    newIcon.src = ele.path;
+  }
 }
+
+initialize(equipmentArr);
+initialize(inventoryArr);
+initialize(questItemArr);
+initialize(maskArr);
 
 // Left side buttons
 const showAll = document.querySelector(".show-all");
@@ -31,7 +60,7 @@ const clearAllCancel = document.querySelector(".clear-all-cancel");
 
 // Selecting icons
 const allIcons = document.querySelectorAll(".icons img");
-const selectMasks = document.querySelectorAll(".masks");
+const selectMasks = document.querySelectorAll("#masks");
 const selectQuestItems = document.querySelectorAll(".quest-item");
 const selectInventory = document.querySelectorAll(".inventory");
 const selectEquipment = document.querySelectorAll(".equipment");
