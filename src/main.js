@@ -30,7 +30,13 @@ function initialize(list) {
     appendItem(ele, "inventory", newIcon);
     appendItem(ele, "equipment", newIcon);
     appendItem(ele, "regular-masks", newIcon);
-
+    if (ele.id === "bottle") {
+      newIcon.setAttribute("id", ele.id);
+      document.querySelector("#bottle").classList.add("dropdown-toggle");
+      document
+        .querySelector("#bottle")
+        .setAttribute("data-bs-toggle", "dropdown");
+    }
     if (ele.id === "boss-remains") {
       document.querySelector("#remains-span").append(newIcon);
     }

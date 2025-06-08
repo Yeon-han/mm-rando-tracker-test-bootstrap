@@ -149,6 +149,17 @@ export let inventoryArr = [
       return this.itemCategory;
     },
   },
+  {
+    id: "bottle",
+    itemName: "Bottle",
+    itemCategory: "inventory",
+    get path() {
+      return `./assets/${this.itemCategory}/${this.itemName}.png`;
+    },
+    get insertClass() {
+      return this.itemCategory;
+    },
+  },
 ];
 
 export let maskArr = [
