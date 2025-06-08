@@ -1,7 +1,10 @@
 /* .hide-icon {
   display:none;
 } */
-
+body {
+  background: #fc3f7e;
+  background: linear-gradient(90deg, rgba(252, 63, 126, 1) 0%, rgba(221, 37, 69, 1) 41%, rgba(253, 29, 29, 1) 69%, rgba(252, 176, 69, 1) 100%);
+}
 
 .unchecked {
   filter: grayscale(100%);
@@ -10,8 +13,24 @@
 
 .icons img:hover {
   cursor: pointer;
+  transition: box-shadow .3s;
+  box-shadow: 3px 3px 4px rgb(0, 0, 0);
+  transform: translateY(-4%)
 }
 
 div .icons {
  user-select: none; 
 }
+
+/* .bounce {
+  animation: bounce 0.6s ease;
+}
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+} */

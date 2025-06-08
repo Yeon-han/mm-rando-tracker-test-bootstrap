@@ -52,8 +52,6 @@ function initialize(list) {
   }
 }
 
-// appendItem(ele, "inventory", newIcon);
-
 initialize(equipmentArr);
 initialize(inventoryArr);
 initialize(questItemArr);
@@ -110,19 +108,19 @@ selectChecklistView(showEquipmentButton, selectEquipment, "");
 selectChecklistView(showMasksButton, selectMasks, "");
 
 // Add shadows when hovering for all images
-allIcons.forEach((ele) => {
-  shadowToggle(ele);
-});
+// allIcons.forEach((ele) => {
+//   shadowToggle(ele);
+// });
 
 // Shadow on mouseenter/mouseout
-function shadowToggle(thing) {
-  thing.addEventListener("mouseenter", () => {
-    thing.classList.toggle("shadow");
-  });
-  thing.addEventListener("mouseout", () => {
-    thing.classList.toggle("shadow");
-  });
-}
+// function shadowToggle(thing) {
+//   thing.addEventListener("mouseenter", () => {
+//     thing.classList.toggle("shad-tog");
+//   });
+//   thing.addEventListener("mouseout", () => {
+//     thing.classList.toggle("shad-tog");
+//   });
+// }
 
 // Collapse warning
 function collapseAfterClear() {
